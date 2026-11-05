@@ -1,0 +1,22 @@
+name: 问题反馈
+description: 安装、规则、接口或字幕检查问题
+title: "[问题] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 软件版本与系统
+      placeholder: 例如 Studio 1.0.0 / Windows 11 x64 或 macOS 15 M2
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重现步骤和实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图与补充信息
+      description: 请遮盖密钥、个人信息与未授权剧本内容。

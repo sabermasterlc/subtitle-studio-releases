@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "profileId": "dramabox-en",
+  "version": "1.4.0",
+  "language": "en",
+  "sources": [
+    "字幕校对台 Studio 默认团队规范，版本 1.4.0"
+  ],
+  "rules": [
+    {
+      "id": "DB-T01",
+      "title": "英文标点",
+      "enabled": true,
+      "kind": "literal_map",
+      "stage": "text",
+      "replacements": {
+        "，": ",",
+        "。": ".",
+        "？": "?",
+        "！": "!",
+        "：": ":",
+        "；": ";",
+        "（": "(",
+        "）": ")",
+        "“": "\"",
+        "”": "\"",
+        "‘": "'",
+        "’": "'",
+        "…": "..."
+      }
+    },
+    {
+      "id": "DB-T02",
+      "title": "标点后一个空格",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "检查标点后空格；保留小数、缩写、撇号、引号闭合及省略号内部。句尾条目末尾是否保留空格尚待团队明确。"
+    },
+    {
+      "id": "DB-T03",
+      "title": "完整句必须有句尾标点",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "跨台词行重建完整句，再判断句号、问号、感叹号或省略号；不得给每个条目强加句号。"
+    },
+    {
+      "id": "DB-T04",
+      "title": "禁止连续或混用问叹号",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "?!、???、!!! 等按语气选单个符号；不能误报合法 ...。"
+    },
+    {
+      "id": "DB-T05",
+      "title": "句首首字母大写",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "句首可能跨多个条目；续句开头不等于句首。",
+      "protectedWords": [
+        "iPhone",
+        "eBay",
+        "iPad",
+        "iPod"
+      ]
+    },
+    {
+      "id": "DB-T06",
+      "title": "指定简写展开",
+      "enabled": true,
+      "kind": "lexicon_map",
+      "stage": "text",
+      "replacements": {
+        "ok": "okay",
+        "omg": "oh my God",
+        "omfg": "oh my f*cking God",
+        "wtf": "what the f*ck",
+        "asap": "as soon as possible",
+        "btw": "by the way",
+        "idk": "I don't know",
+        "nvm": "never mind",
+        "tbh": "to be honest",
+        "pls": "please",
+        "plz": "please",
+        "thx": "thanks",
+        "u": "you",
+        "b4": "before",
+        "cya": "see you",
+        "bc": "because",
+        "cuz": "because",
+        "cos": "because",
+        "'cause": "because",
+        "'til": "until",
+        "y'know": "you know",
+        "ppl": "people",
+        "abt": "about"
+      },
+      "matchMode": "word",
+      "patterns": {
+        "ok": "(?<![\\w*])(?:o\\.?k\\.?)(?![\\w*])",
+        "'cause": "(?<![\\w*])(?:['’]cause)(?![\\w*])",
+        "'til": "(?<![\\w*])(?:['’]til)(?![\\w*])",
+        "y'know": "(?<![\\w*])(?:y['’]know)(?![\\w*])"
+      },
+      "reviewOnly": {
+        "lol": "删除或改写 / remove or rephrase",
+        "ur": "your / you're"
+      }
+    },
+    {
+      "id": "DB-T07",
+      "title": "God 首字母大写",
+      "enabled": true,
+      "kind": "word_map",
+      "stage": "text",
+      "replacements": {
+        "god": "God"
+      }
+    },
+    {
+      "id": "DB-T08",
+      "title": "专名大小写",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "使用本剧审核后的角色、地名与专名词表；区分同形普通词。",
+      "properNames": []
+    },
+    {
+      "id": "DB-T09",
+      "title": "禁止全大写强调",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "NO! → No!，FUCK! → F*ck!；保留 I、合法缩略词和核准专名。",
+      "whitelist": [
+        "TV",
+        "DNA",
+        "FBI",
+        "CIA",
+        "CEO",
+        "CFO",
+        "COO",
+        "CTO",
+        "VIP",
+        "VP",
+        "ID",
+        "AM",
+        "PM",
+        "USA",
+        "UK",
+        "NYC",
+        "LA",
+        "ICU",
+        "ER",
+        "DJ",
+        "GPS",
+        "ATM",
+        "SUV",
+        "CPR",
+        "IQ",
+        "SOS",
+        "MVP",
+        "NBA",
+        "NFL",
+        "BBQ",
+        "RSVP",
+        "HR",
+        "PR",
+        "AI",
+        "IV",
+        "II",
+        "III",
+        "VI",
+        "VII",
+        "VIII",
+        "IX",
+        "XI",
+        "XII"
+      ]
+    },
+    {
+      "id": "DB-T10",
+      "title": "打断和未完句使用三个英文句点",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "打断台词统一 ...，不使用 - 表示；不要替换正常复合词连字符或双人说话标记。"
+    },
+    {
+      "id": "DB-T11",
+      "title": "指定脏话屏蔽",
+      "enabled": true,
+      "kind": "lexicon_map",
+      "stage": "text",
+      "replacements": {
+        "asshole": "*sshole",
+        "bastard": "b*stard",
+        "bitch": "b*tch",
+        "blowjob": "bl*wjob",
+        "cock": "c*ck",
+        "cunt": "c*nt",
+        "damn": "d*mn",
+        "dick": "d*ck",
+        "faggot": "f*ggot",
+        "fuck": "f*ck",
+        "ho": "h*",
+        "hoe": "h*e",
+        "hump": "h*mp",
+        "jerk": "j*rk",
+        "penis": "p*nis",
+        "prick": "pr*ck",
+        "pussy": "p*ssy",
+        "scumbag": "sc*mbag",
+        "shit": "sh*t",
+        "slut": "sl*t",
+        "whore": "wh*re"
+      },
+      "matchMode": "root",
+      "patterns": {
+        "cock": "\\bcock(?!tail|pit|roach)[a-z]*\\b",
+        "ho": "\\bhos?\\b",
+        "hoe": "\\bhoes?\\b",
+        "prick": "\\bprick(?!l)[a-z]*\\b"
+      }
+    },
+    {
+      "id": "DB-T12",
+      "title": "跨条续句移除重复句首省略号",
+      "enabled": true,
+      "kind": "context_edit",
+      "stage": "text",
+      "operation": "dedupe_leading_ellipsis",
+      "instruction": "前一条有效台词以...或…结尾，且下一条台词开头也是...或…时，仅移除下一条开头重复的省略号，保留前条句尾及词语大小写。作为候选供复核，不删除独立停顿。"
+    },
+    {
+      "id": "DB-T13",
+      "title": "完整句接打断新句的标点",
+      "enabled": true,
+      "kind": "context_edit",
+      "stage": "text",
+      "operation": "sentence_before_interruption",
+      "sentenceStarts": [
+        "It's",
+        "It’s"
+      ],
+      "instruction": "仅匹配已登记的新句开头及句尾—：例如me power... It's—，建议改为me power. It's...。不把所有省略号一律改句号；登记短语可编辑，应用前核对语境。"
+    },
+    {
+      "id": "DB-T14",
+      "title": "句内破折号逐处复核",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "text",
+      "instruction": "句内—不能仅凭位置判定无意义；逐处确认是否为解释、插入、转折或打断。仅删除用户明确核准的无意义破折号并用英文空格隔开，不批量删除全部破折号，不影响正常复合词连字符与范围符号。"
+    },
+    {
+      "id": "DB-T15",
+      "title": "已核准的句内破折号替换",
+      "enabled": true,
+      "kind": "word_map",
+      "stage": "text",
+      "instruction": "仅匹配用户明确核准的完整文本并生成可选建议。本例按用户要求仅留空格；不作为通用英文语法规则，不推广到其他句内破折号。",
+      "replacements": {
+        "Search his mind—the proof has to be in there!": "Search his mind the proof has to be in there!"
+      }
+    },
+    {
+      "id": "DB-A01",
+      "title": "字幕不得提前于对白",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "alignment",
+      "instruction": "由对轴插件结合声音核验；OCR 的显示时间不能证明对白发音时间。"
+    },
+    {
+      "id": "DB-A02",
+      "title": "消失时间与连续性",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "alignment",
+      "instruction": "下一句开始前消失，兼顾阅读停留、连续对白和切点；同时说话按例外处理，不使用未经确认的 CPS 或帧间隔阈值。"
+    },
+    {
+      "id": "DB-L01",
+      "title": "字幕分条与语句边界",
+      "enabled": true,
+      "kind": "layout_policy",
+      "stage": "visual",
+      "instruction": "只在预计超行或修复已断开的保护短语时重新分条；优先句末、逗号等停顿，避免切开配置的保护短语或将指定功能词留在条尾。续句尾部不与下一新句拼成一条；可修复相邻行中已被切开的保护短语，但不跨空段或已知角色边界。字词顺序与大小写保留，实际PR样式和声音气口仍须复核。",
+      "layoutPolicy": {
+        "maxRows": 2,
+        "preferComma": true,
+        "joinIsolatedWords": true,
+        "preferSentenceBoundary": true,
+        "protectedPhrases": [
+          "whoever's being tested",
+          "is being tested",
+          "was being tested"
+        ],
+        "avoidEndingWords": [
+          "a",
+          "an",
+          "the",
+          "of",
+          "to",
+          "in",
+          "on",
+          "for",
+          "with",
+          "and",
+          "or",
+          "but",
+          "am",
+          "is",
+          "are",
+          "was",
+          "were",
+          "be",
+          "being",
+          "been",
+          "have",
+          "has",
+          "had",
+          "will",
+          "would",
+          "can",
+          "could",
+          "should",
+          "must",
+          "whoever's",
+          "who's",
+          "what's",
+          "that's",
+          "it's",
+          "there's",
+          "I'm",
+          "you're",
+          "he's",
+          "she's",
+          "we're",
+          "they're"
+        ]
+      }
+    },
+    {
+      "id": "DB-V01",
+      "title": "画面不得出现三行字幕",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "visual",
+      "instruction": "检查实际渲染折行；长句按气口拆分；普通字幕不手动换行，双人同时说话格式按核准示例。"
+    },
+    {
+      "id": "DB-V02",
+      "title": "PR 字幕样式",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "visual",
+      "instruction": "对照 DramaBox_Sub字幕_PR_2026.prtextstyle。文本记载 MiSans-Demibold、字号70、字距-30、行距0、X-0/Y-421、框宽88高0；坐标单位及其余参数以预设/宿主核验，不凭OCR确认字体参数。"
+    },
+    {
+      "id": "DB-D01",
+      "title": "SRT 结构",
+      "instruction": "检查编号连续、时间有效、不重叠和空条；只报告，不改时轴。",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "delivery"
+    },
+    {
+      "id": "DB-D02",
+      "title": "UTF-8 BOM 交付要求",
+      "instruction": "团队可选项；打开时检查BOM，不代表所有平台均要求BOM。",
+      "enabled": false,
+      "kind": "context_review",
+      "stage": "delivery",
+      "requireBom": true
+    },
+    {
+      "id": "DB-D03",
+      "title": "时间码小时上限",
+      "instruction": "可选交付范围限制，不表示发音已对轴；禁用此规则可保留一小时时间基准。",
+      "enabled": false,
+      "kind": "context_review",
+      "stage": "delivery",
+      "hourLimit": 1
+    },
+    {
+      "id": "DB-D04",
+      "title": "集内台词差异",
+      "instruction": "对本集明确选择的核准台词比较；逐次保留重复喊话，不使用全批覆盖率放行。",
+      "enabled": true,
+      "kind": "context_review",
+      "stage": "delivery"
+    }
+  ],
+  "minimumEngineVersion": "0.9.1"
+}
