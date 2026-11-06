@@ -6,7 +6,7 @@ body:
     id: version
     attributes:
       label: 软件版本与系统
-      placeholder: 例如 Studio 1.0.0 / Windows 11 x64 或 macOS 15 M2
+      placeholder: 例如 Studio 1.0.1 / Windows 11 x64 或 macOS 15 M2
     validations:
       required: true
   - type: textarea

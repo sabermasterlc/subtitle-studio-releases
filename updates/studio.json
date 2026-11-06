@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
   "repository": "sabermasterlc/subtitle-studio-releases",
-  "version": "1.0.0",
-  "channel": "preview",
-  "releaseUrl": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/tag/v1.0.0-preview.1",
+  "version": "1.0.1",
+  "channel": "stable",
+  "releaseUrl": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/tag/v1.0.1",
   "installers": {
     "windows": {
-      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.0-preview.1/Windows-Setup.exe",
-      "sha256": "0c36e7c6c868a9e7d5aa7e6d15c14d7f2f94eed7690842ab4213f438ead9da3d",
-      "bytes": 115880025
+      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.1/Windows-Setup.exe",
+      "sha256": "f5ed0c8fa0ecae0510c5df16065c04fc934b6849310e03e2f30fff36d9fa52b9",
+      "bytes": 115953375
     },
     "macos": {
-      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.0-preview.1/Mac-M-Series.dmg",
-      "sha256": "83a346166486d8d981fc47a87b424bef3701f04081fda56f549ff6f6fa5dc497",
-      "bytes": 158749614
+      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.1/Mac-M-Series.dmg",
+      "sha256": "3039be54c8bc6ff9b4f10b2e8c160fb5c5902fb4503255630d5c7e8cb3621b79",
+      "bytes": 156707648
     }
   },
   "rules": {
