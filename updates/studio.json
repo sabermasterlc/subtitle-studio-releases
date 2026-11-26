@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
   "repository": "sabermasterlc/subtitle-studio-releases",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "channel": "stable",
-  "releaseUrl": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/tag/v1.0.1",
+  "releaseUrl": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/tag/v1.0.11",
   "installers": {
     "windows": {
-      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.1/Windows-Setup.exe",
-      "sha256": "f5ed0c8fa0ecae0510c5df16065c04fc934b6849310e03e2f30fff36d9fa52b9",
-      "bytes": 115953375
+      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.11/G17_Check-Windows-Setup.exe",
+      "sha256": "5aa11d9f8a47accca6ffb4ba35b14f55dabfc4f769535d26703e6fa4da6252eb",
+      "bytes": 115737542
     },
     "macos": {
-      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.1/Mac-M-Series.dmg",
-      "sha256": "3039be54c8bc6ff9b4f10b2e8c160fb5c5902fb4503255630d5c7e8cb3621b79",
-      "bytes": 156707648
+      "url": "https://github.com/sabermasterlc/subtitle-studio-releases/releases/download/v1.0.11/G17_Check-Mac-M-Series.dmg",
+      "sha256": "d75ce2d5d97a781cd25c38de5cef574ae2ddd0152e0dfd01211ad9f239c0fd0e",
+      "bytes": 157149600
     }
   },
   "rules": {
     "url": "https://raw.githubusercontent.com/sabermasterlc/subtitle-studio-releases/main/rules/default-team.json",
-    "sha256": "b46427e3618e98e1dc7b10338d13916889d41b1b62b72a08a3d864bca780f554",
-    "bytes": 12085,
-    "version": "1.4.0",
-    "minimumAppVersion": "1.0.0"
+    "sha256": "7f7f475fc7669c986fab15433aa402e4d36d9c0c0fa7468e7acfafe34c9a11a1",
+    "bytes": 12671,
+    "version": "1.5.0",
+    "minimumAppVersion": "1.0.11"
   }
 }

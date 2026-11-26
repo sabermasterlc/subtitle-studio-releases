@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "profileId": "dramabox-en",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "language": "en",
   "sources": [
-    "字幕校对台 Studio 默认团队规范，版本 1.4.0"
+    "G17_Check 默认团队规范，版本 1.5.0"
   ],
   "rules": [
     {
@@ -251,11 +251,26 @@
     },
     {
       "id": "DB-T14",
-      "title": "句内破折号逐处复核",
+      "title": "句内分隔横线改为逗号",
       "enabled": true,
-      "kind": "context_review",
+      "kind": "context_edit",
       "stage": "text",
-      "instruction": "句内—不能仅凭位置判定无意义；逐处确认是否为解释、插入、转折或打断。仅删除用户明确核准的无意义破折号并用英文空格隔开，不批量删除全部破折号，不影响正常复合词连字符与范围符号。"
+      "instruction": "句内分隔横线（—、——、–、--及带空格的-等）改为英文逗号和空格；已有标点不重复添加。已核准完整短语替换优先；无空格单连字符复合词、负数、数字范围和句首对白标记保留；句尾打断由DB-T10处理。",
+      "operation": "inline_dash_comma",
+      "cases": [
+        {
+          "before": "I'm begging you—subject Jake to the mind probe!",
+          "expected": "I'm begging you, subject Jake to the mind probe!"
+        },
+        {
+          "before": "My brother—not Jake—will stay.",
+          "expected": "My brother, not Jake, will stay."
+        },
+        {
+          "before": "A well-known hero has SSS-rank power from 1–5, at −5 degrees.",
+          "expected": "A well-known hero has SSS-rank power from 1–5, at −5 degrees."
+        }
+      ]
     },
     {
       "id": "DB-T15",
